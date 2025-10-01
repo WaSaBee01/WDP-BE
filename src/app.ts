@@ -87,18 +87,17 @@ app.use('/api/payment', paymentRoutes);
 app.use('/api/progress', progressRoutes);
 app.use('/api/statistics', statisticsRoutes);
 
-// 404 for undefined API routes
 app.use('/api', (req, res) => {
   res.status(404).json({
-    error: 'API endpoint not found',
-    message: 'This endpoint is not yet implemented',
+    error: 'endpoint not found',
+    message: 'This API endpoint is not yet implemented',
   });
 });
 
-// Error handling middleware (must be last)
+
 app.use(errorHandler);
 
-// 404 handler
+
 app.use((req, res) => {
   res.status(404).json({
     error: 'Route not found',
