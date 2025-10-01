@@ -47,7 +47,7 @@ export const getMealById = async (req: AuthRequest, res: Response): Promise<void
     if (!meal) {
       return res.status(404).json({
         error: 'Not found',
-        message: 'Meal not found',
+        message: 'Meals not found',
       });
     }
 
@@ -58,7 +58,7 @@ export const getMealById = async (req: AuthRequest, res: Response): Promise<void
   } catch (error) {
     return res.status(500).json({
       error: 'Internal server error',
-      message: 'Failed to get meal',
+      message: 'Failed to get meals',
     });
   }
 };
